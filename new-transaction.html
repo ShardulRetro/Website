@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Transactions - Student Financial Management</title>
+ 
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+ table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 20px; /* Adjust the margin as needed */
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 15px; /* Adjust the padding as needed */
+            text-align: left;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        form input {
+            margin-bottom: 10px;
+            padding: 8px;
+        }
+
+        /* Darker color for the home page button */
+        nav ul li a {
+            background-color: #ddd; /* Adjust the color as needed */
+        }
+
+        canvas {
+            margin-top: 20px;
+        }
+
+
+nav ul li a{
+    background-color:#ddd;
+
+}
+
+
+</style>
+</head>
+<body>
+
+<header>
+    <h1>View Transactions</h1>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="index.html">Home Page</a></li>
+    </ul>
+</nav>
+<section>
+    <h2>Your Transaction History</h2>
+    <p>Here are the details of your transaction history:</p>
+
+    <table>
+        <tr>
+            <th>Date</th>
+            <th>Description</th>
+            <th>Amount</th>
+            <th>Type</th>
+            <th>Status</th>
+        </tr>
+        <tr>
+            <td>2023-10-01</td>
+            <td>Tuition Fee</td>
+            <td>$1,000.00</td>
+            <td>Expense</td>
+            <td>Paid</td>
+        </tr>
+        <tr>
+            <td>2023-10-05</td>
+            <td>Books and Supplies</td>
+            <td>$150.00</td>
+            <td>Expense</td>
+            <td>Unpaid</td>
+        </tr>
+        <tr>
+            <td>2023-10-10</td>
+            <td>Scholarship Award</td>
+            <td>$500.00</td>
+            <td>Income</td>
+            <td>Processed</td>
+        </tr>
+        <!-- Add more rows as needed -->
+    </table>
+
+    <p>Total Transactions: 3</p>
+
+    <canvas id="transactionChart" width="400" height="200"></canvas>
+    <script>
+        // Dummy data for the chart
+        var transactionData = {
+            labels: ["Tuition Fee", "Books and Supplies", "Scholarship Award"],
+            datasets: [{
+                label: "Transaction Amounts",
+                backgroundColor: ["#3498db", "#e74c3c", "#2ecc71"],
+                data: [1000, 150, 500]
+            }]
+        };
+    
+        // Get the canvas element
+        var ctx = document.getElementById('transactionChart').getContext('2d');
+    
+        // Create a bar chart
+        var transactionChart = new Chart(ctx, {
+            type: 'bar',
+            data: transactionData
+        });
+
+<footer>
+    <p>&copy; 2023 Student Financial Management. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

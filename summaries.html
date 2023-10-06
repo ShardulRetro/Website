@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Transactions - Student Financial Management</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+       
+       <style>
+        /* Additional styling for tabs */
+        .tabs {
+            display: flex;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .tab {
+            margin-right: 20px;
+            cursor: pointer;
+            padding: 10px;
+            background-color: #eee;
+            border-radius: 5px;
+        }
+
+        .tab.active {
+            background-color: #3498db;
+            color: white;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+       
+       nav ul li a
+        {
+            background-color:#ddd
+
+        }
+
+
+
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>View Summary</h1>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="index.html">Home Page</a></li>
+    </ul>
+</nav>
+
+<ul class="tabs">
+    <li class="tab" onclick="showTab('tuitionFees')">Tuition and Fees</li>
+    <li class="tab" onclick="showTab('paymentOptions')">Payment Options</li>
+    <li class="tab" onclick="showTab('refundPolicy')">Refund Policy</li>
+    <li class="tab" onclick="showTab('financialStatements')">Financial Statements</li>
+</ul>
+
+<!-- Content for each tab -->
+<div id="tuitionFees" class="tab-content">
+    <p>Understanding the costs associated with your education is essential. Here is an overview of tuition and fees:</p>
+    <ul>
+        <li><strong>Tuition:</strong> The cost of instruction and academic services.</li>
+        <li><strong>Fees:</strong> Additional charges for facilities, technology, and other services.</li>
+        <li><strong>Total Cost:</strong> The combined amount of tuition and fees for the academic term.</li>
+    </ul>
+</div>
+
+<div id="paymentOptions" class="tab-content">
+    <p>We offer flexible payment options to make managing your expenses more convenient:</p>
+    <ul>
+        <li><strong>Full Payment:</strong> Pay the entire amount at the beginning of the term.</li>
+        <li><strong>Installment Plans:</strong> Break down payments into manageable installments.</li>
+        <li><strong>Financial Aid:</strong> Explore available financial aid programs to offset costs.</li>
+        <!-- Add more payment options as needed -->
+    </ul>
+</div>
+
+<div id="refundPolicy" class="tab-content">
+    <p>Our refund policy ensures fairness in financial transactions. Here are key points to note:</p>
+    <ul>
+        <li>Refund eligibility criteria, such as withdrawal deadlines.</li>
+        <li>Process for requesting and receiving refunds.</li>
+        <li>Timeline for processing refunds.</li>
+    </ul>
+</div>
+
+<div id="financialStatements" class="tab-content">
+    <p>Access your financial statements for a detailed breakdown of transactions and balances:</p>
+    <ul>
+        <li><strong>Billing Statements:</strong> Monthly or term-based statements outlining charges and payments.</li>
+        <li><strong>Transaction History:</strong> Track all financial transactions related to your education.</li>
+    </ul>
+</div>
+</section>
+
+<footer>
+<p>&copy; 2023 Student Financial Management. All rights reserved.</p>
+</footer>
+
+<script>
+// Function to show the content of a specific tab
+function showTab(tabId) {
+    // Hide all tabs
+    var tabs = document.querySelectorAll('.tab-content');
+    tabs.forEach(function(tab) {
+        tab.classList.remove('active');
+    });
+
+    // Show the selected tab
+    document.getElementById(tabId).classList.add('active');
+
+    // Update the active state of the tabs
+    var tabButtons = document.querySelectorAll('.tab');
+    tabButtons.forEach(function(button) {
+        button.classList.remove('active');
+    });
+
+    var activeButton = document.querySelector('[onclick="showTab(\'' + tabId + '\')"]');
+    activeButton.classList.add('active');
+}
+</script>
+
+</body>
+</html>

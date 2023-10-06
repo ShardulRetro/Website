@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Transactions - Student Financial Management</title>
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<style>
+    /* Additional CSS for increased spacing between table rows */
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        margin-top: 20px; /* Adjust the margin as needed */
+    }
+
+    table, th, td {
+        border: 1px solid #ddd;
+    }
+
+    th, td {
+        padding: 15px; /* Adjust the padding as needed */
+        text-align: left;
+    }
+    
+    form {
+            margin-top: 20px;
+        }
+
+        form input {
+            margin-bottom: 10px;
+            padding: 8px;
+        }
+    nav ul li a{
+        background-color: #ddd;
+
+    }
+</style>
+
+
+<body>
+
+<header>
+    <h1>View Billing</h1>
+</header>
+
+<nav>
+    <ul>
+        <li><a href="index.html">Home Page</a></li>
+    </ul>
+</nav>
+<section>
+    <h2>Your Billing Information</h2>
+    <p>Here are the details of your billing information:</p>
+
+    <table>
+        <tr>
+            <th>Date</th>
+            <th>Description</th>
+            <th>Amount</th>
+        </tr>
+        <tr>
+            <td>2023-10-01</td>
+            <td>Tuition Fee</td>
+            <td>$1,000.00</td>
+        </tr>
+        <tr>
+            <td>2023-10-05</td>
+            <td>Books and Supplies</td>
+            <td>$150.00</td>
+        </tr>
+        <!-- Add more rows as needed -->
+    </table>
+
+    <p>Total Amount Due: $1,150.00</p>
+    <form id="addTransactionForm">
+        <label for="newDate">Date:</label>
+        <input type="text" id="newDate" name="newDate" required>
+
+        <label for="newDescription">Description:</label>
+        <input type="text" id="newDescription" name="newDescription" required>
+
+        <label for="newAmount">Amount:</label>
+        <input type="text" id="newAmount" name="newAmount" required>
+
+        <button type="button" onclick="addTransaction()">Add Transaction</button>
+    </form>
+</section>
+
+<footer>
+    <p>&copy; 2023 Student Financial Management. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
